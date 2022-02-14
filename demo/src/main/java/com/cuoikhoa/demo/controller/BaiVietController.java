@@ -24,6 +24,7 @@ import com.cuoikhoa.demo.service.QuyenHanService;
 import com.cuoikhoa.demo.service.TaiKhoanService;
 import com.cuoikhoa.demo.service.TinhTrangHocService;
 
+//alo
 @RestController
 public class BaiVietController {
 	//Autowired Repository
