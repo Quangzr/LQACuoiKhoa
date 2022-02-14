@@ -1,8 +1,17 @@
 package com.cuoikhoa.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.cuoikhoa.demo.model.HocVien;
+import com.cuoikhoa.demo.model.ResponseDTO;
 import com.cuoikhoa.demo.repository.BaiVietRepository;
 import com.cuoikhoa.demo.repository.ChuDeRepository;
 import com.cuoikhoa.demo.repository.DangKyHocRepository;
@@ -26,65 +35,90 @@ import com.cuoikhoa.demo.service.TinhTrangHocService;
 
 @RestController
 public class HocVienController {
-	//Autowired Repository
-		@Autowired
-		BaiVietRepository baiVietRepository;
-		
-		@Autowired
-		ChuDeRepository chuDeRepository;
-		
-		@Autowired
-		DangKyHocRepository dangKyHocRepository;
-		
-		@Autowired
-		HocVienRepository hocVienRepository;
-		
-		@Autowired
-		KhoaHocRepository khoaHocRepository;
-		
-		@Autowired
-		LoaiBaiVietRepository loaiBaiVietRepository;
-		
-		@Autowired
-		LoaiKhoaHocRepository loaiKhoaHocRepository;
-		
-		@Autowired
-		QuyenHanRepository quyenHanRepository;
-		
-		@Autowired
-		TaiKhoanRepository taiKhoanRepository;
-		
-		@Autowired
-		TinhTrangHocRepository tinhTrangHocRepository;
-		
-		//Autowired Service
-		@Autowired
-		BaiVietService baiVietService;
-		
-		@Autowired
-		ChuDeService chuDeService;
-		
-		@Autowired
-		DangKyHocService dangKyHocService;
-		
-		@Autowired
-		HocVienService hocVienService;
-		
-		@Autowired
-		KhoaHocService khoaHocService;
-		
-		@Autowired
-		LoaiBaiVietService loaiBaiVietService;
-		
-		@Autowired
-		LoaiKhoaHocService loaiKhoaHocService;
-		
-		@Autowired
-		QuyenHanService quyenHanService;
-		
-		@Autowired
-		TaiKhoanService taiKhoanService;
-		
-		@Autowired
-		TinhTrangHocService tinhTrangHocService;
+	// Autowired Repository
+	@Autowired
+	BaiVietRepository baiVietRepository;
+
+	@Autowired
+	ChuDeRepository chuDeRepository;
+
+	@Autowired
+	DangKyHocRepository dangKyHocRepository;
+
+	@Autowired
+	HocVienRepository hocVienRepository;
+
+	@Autowired
+	KhoaHocRepository khoaHocRepository;
+
+	@Autowired
+	LoaiBaiVietRepository loaiBaiVietRepository;
+
+	@Autowired
+	LoaiKhoaHocRepository loaiKhoaHocRepository;
+
+	@Autowired
+	QuyenHanRepository quyenHanRepository;
+
+	@Autowired
+	TaiKhoanRepository taiKhoanRepository;
+
+	@Autowired
+	TinhTrangHocRepository tinhTrangHocRepository;
+
+	// Autowired Service
+	@Autowired
+	BaiVietService baiVietService;
+
+	@Autowired
+	ChuDeService chuDeService;
+
+	@Autowired
+	DangKyHocService dangKyHocService;
+
+	@Autowired
+	HocVienService hocVienService;
+
+	@Autowired
+	KhoaHocService khoaHocService;
+
+	@Autowired
+	LoaiBaiVietService loaiBaiVietService;
+
+	@Autowired
+	LoaiKhoaHocService loaiKhoaHocService;
+
+	@Autowired
+	QuyenHanService quyenHanService;
+
+	@Autowired
+	TaiKhoanService taiKhoanService;
+
+	@Autowired
+	TinhTrangHocService tinhTrangHocService;
+
+	// Get All
+	@SuppressWarnings("rawtypes")
+	@GetMapping(value = "/hocvien/getall")
+	public ResponseEntity getListHocVienController() {
+		return ResponseEntity.ok(hocVienService.getListHocVien());
+	}
+
+	// Thêm
+	@PostMapping(value = "/hocvien/them")
+	public ResponseEntity<ResponseDTO> ThemHocVienController(@RequestBody HocVien hocVienMoi) {
+		return hocVienService.ThemHocVien(hocVienMoi);
+	}
+
+	// Xóa
+	@DeleteMapping(value = "/hocvien/xoa")
+	public ResponseEntity<ResponseDTO> XoaHocVienController(@RequestParam int maHocVien) {
+		return hocVienService.XoaHocVien(maHocVien);
+	}
+
+	// Sửa
+	@PutMapping(value = "/hocvien/sua")
+	public ResponseEntity<ResponseDTO> SuaHocVienController(@RequestBody HocVien hocVienSua) {
+		return hocVienService.UpdateHocVien(hocVienSua);
+	}
 }
