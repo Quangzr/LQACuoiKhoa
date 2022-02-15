@@ -15,8 +15,7 @@ import com.cuoikhoa.demo.service.BaiVietService;
 @RestController
 @RequestMapping(value = "/baiviet")
 public class BaiVietController {
-	
-	//Autowired Service
+
 	@Autowired
 	BaiVietService baiVietService;
 	

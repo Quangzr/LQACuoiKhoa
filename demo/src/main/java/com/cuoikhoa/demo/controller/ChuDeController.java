@@ -14,8 +14,8 @@ import com.cuoikhoa.demo.service.ChuDeService;
 
 @RestController
 @RequestMapping(value = "/chude")
+
 public class ChuDeController {
-	
 		@Autowired
 		ChuDeService chuDeService;
 		

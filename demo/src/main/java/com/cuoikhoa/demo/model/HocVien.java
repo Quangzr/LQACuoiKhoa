@@ -32,11 +32,13 @@ public class HocVien {
 	@Column
 	private LocalDate ngaySinh;
 	
-	@Column(unique = true)
+//	@Column(unique = true)
+	@Column
 	@Size(max = 11, message = "Số điện thoại không được quá 11 kí tự")
 	private String soDienThoai;
 	
-	@Column(unique = true)
+//	@Column(unique = true)
+	@Column
 	@Size(max = 40, message = "Email không được quá 40 kí tự")
 	private String email;
 	

@@ -15,7 +15,6 @@ import com.cuoikhoa.demo.service.QuyenHanService;
 @RestController
 @RequestMapping(value = "/quyenhan")
 public class QuyenHanController {
-
 		@Autowired
 		QuyenHanService quyenHanService;
 		
