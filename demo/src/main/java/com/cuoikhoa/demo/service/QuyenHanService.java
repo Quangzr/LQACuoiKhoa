@@ -34,7 +34,7 @@ public class QuyenHanService {
 	
 	//add
 	@SuppressWarnings("rawtypes")
-	public ResponseEntity themBaiViet(QuyenHan quyenHan) {
+	public ResponseEntity themQuyenHan(QuyenHan quyenHan) {
 		Set<ConstraintViolation<QuyenHan>> violations = validator.validate(quyenHan);
 		String strError = "";
 		
@@ -52,7 +52,7 @@ public class QuyenHanService {
 	
 	//update
 	@SuppressWarnings("rawtypes")
-	public ResponseEntity suaBaiViet(QuyenHan quyenHan) {
+	public ResponseEntity suaQuyenHan(QuyenHan quyenHan) {
 		Set<ConstraintViolation<QuyenHan>> violations = validator.validate(quyenHan);
 		String strError = "";
 		
@@ -78,7 +78,7 @@ public class QuyenHanService {
 	
 	//delete
 		@SuppressWarnings("rawtypes")
-		public ResponseEntity xoaLoaiBaiViet(int id) {
+		public ResponseEntity xoaQuyenHan(int id) {
 			Optional<QuyenHan> op = Optional.empty();
 			if (quyenHanRepository.findById(id) == op) {
 				ResponseEntity.badRequest().body("Bài viết không tồn tại!!");

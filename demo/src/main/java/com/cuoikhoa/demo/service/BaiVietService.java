@@ -86,7 +86,7 @@ public class BaiVietService {
 	
 	//delete
 		@SuppressWarnings("rawtypes")
-		public ResponseEntity xoaLoaiBaiViet(int id) {
+		public ResponseEntity xoaBaiViet(int id) {
 			Optional<BaiViet> op = Optional.empty();
 			if (baiVietRepository.findById(id) == op) {
 				ResponseEntity.badRequest().body("Bài viết không tồn tại!!");
