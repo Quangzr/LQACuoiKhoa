@@ -35,7 +35,7 @@ public class TaiKhoanService {
 
 	// add
 	@SuppressWarnings("rawtypes")
-	public ResponseEntity themBaiViet(TaiKhoan taiKhoan) {
+	public ResponseEntity themTaiKhoan(TaiKhoan taiKhoan) {
 		Set<ConstraintViolation<TaiKhoan>> violations = validator.validate(taiKhoan);
 		String strError = "";
 
@@ -53,7 +53,7 @@ public class TaiKhoanService {
 
 	// update
 	@SuppressWarnings("rawtypes")
-	public ResponseEntity suaBaiViet(TaiKhoan taiKhoan) {
+	public ResponseEntity suaTaiKhoan(TaiKhoan taiKhoan) {
 		Set<ConstraintViolation<TaiKhoan>> violations = validator.validate(taiKhoan);
 		String strError = "";
 
@@ -87,7 +87,7 @@ public class TaiKhoanService {
 
 	// delete
 	@SuppressWarnings("rawtypes")
-	public ResponseEntity xoaLoaiBaiViet(int id) {
+	public ResponseEntity xoaTaiKhoan(int id) {
 		Optional<TaiKhoan> op = Optional.empty();
 		if (taiKhoanRepository.findById(id) == op) {
 			ResponseEntity.badRequest().body("Tài Khoản không tồn tại!!");

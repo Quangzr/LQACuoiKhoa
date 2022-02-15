@@ -35,7 +35,7 @@ public class ChuDeService {
 
 	// add
 	@SuppressWarnings("rawtypes")
-	public ResponseEntity themBaiViet(ChuDe chuDe) {
+	public ResponseEntity themChuDe(ChuDe chuDe) {
 		Set<ConstraintViolation<ChuDe>> violations = validator.validate(chuDe);
 		String strError = "";
 
@@ -53,7 +53,7 @@ public class ChuDeService {
 
 	// update
 	@SuppressWarnings("rawtypes")
-	public ResponseEntity suaBaiViet(ChuDe chuDe) {
+	public ResponseEntity suaChuDe(ChuDe chuDe) {
 		Set<ConstraintViolation<ChuDe>> violations = validator.validate(chuDe);
 		String strError = "";
 
@@ -80,7 +80,7 @@ public class ChuDeService {
 
 	// delete
 	@SuppressWarnings("rawtypes")
-	public ResponseEntity xoaLoaiBaiViet(int id) {
+	public ResponseEntity xoaChuDe(int id) {
 		Optional<ChuDe> op = Optional.empty();
 		if (chuDeRepository.findById(id) == op) {
 			ResponseEntity.badRequest().body("Chủ đề không tồn tại!!");
