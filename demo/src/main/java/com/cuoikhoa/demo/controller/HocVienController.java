@@ -97,6 +97,13 @@ public class HocVienController {
 	@Autowired
 	TinhTrangHocService tinhTrangHocService;
 
+	// Phân trang danh sách
+	@SuppressWarnings("rawtypes")
+	@GetMapping(value = "/hocvien/phantrang")
+	public ResponseEntity PhanTrangHocVien() {
+		return ResponseEntity.ok(hocVienService.PhanTrangHocVien());
+	}
+
 	// Get All
 	@SuppressWarnings("rawtypes")
 	@GetMapping(value = "/hocvien/getall")
