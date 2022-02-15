@@ -24,19 +24,19 @@ public class LoaiBaiVietController {
 		public ResponseEntity hienThiDanhSach() {
 			return ResponseEntity.ok(loaiBaiVietService.hienThiDanhSach());
 		}
-		
+
 		@SuppressWarnings("rawtypes")
 		@PostMapping(value = "/them")
 		public ResponseEntity themBaiViet(LoaiBaiViet loaiBaiViet) {
 			return ResponseEntity.ok(loaiBaiVietService.themLoaiBaiViet(loaiBaiViet));
 		}
-		
+
 		@SuppressWarnings("rawtypes")
 		@PutMapping(value = "/sua")
 		public ResponseEntity suaBaiViet(LoaiBaiViet loaiBaiViet) {
 			return ResponseEntity.ok(loaiBaiVietService.suaLoaiBaiViet(loaiBaiViet));
 		}
-		
+
 		@SuppressWarnings("rawtypes")
 		@DeleteMapping(value = "/xoa")
 		public ResponseEntity xoaBaiViet(int id) {

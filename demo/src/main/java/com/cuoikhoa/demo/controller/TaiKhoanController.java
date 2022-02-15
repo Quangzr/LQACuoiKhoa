@@ -13,36 +13,36 @@ import com.cuoikhoa.demo.model.TaiKhoan;
 import com.cuoikhoa.demo.service.TaiKhoanService;
 
 @RestController
-@RequestMapping(value = "/chude")
+@RequestMapping(value = "/taikhoan")
 public class TaiKhoanController {
-	//Autowired Repository
+
 		@Autowired
 		TaiKhoanService taiKhoanService;
-		
+
 		@SuppressWarnings("rawtypes")
 		@GetMapping(value = "/danhsach")
 		public ResponseEntity hienThiDanhSach() {
 			return ResponseEntity.ok(taiKhoanService.hienThiDanhSach());
 		}
-		
+
 		@SuppressWarnings("rawtypes")
 		@PostMapping(value = "/them")
 		public ResponseEntity themBaiViet(TaiKhoan taiKhoan) {
 			return ResponseEntity.ok(taiKhoanService.themTaiKhoan(taiKhoan));
 		}
-		
+
 		@SuppressWarnings("rawtypes")
 		@PutMapping(value = "/sua")
 		public ResponseEntity suaBaiViet(TaiKhoan taiKhoan) {
 			return ResponseEntity.ok(taiKhoanService.suaTaiKhoan(taiKhoan));
 		}
-		
+
 		@SuppressWarnings("rawtypes")
 		@DeleteMapping(value = "/xoa")
 		public ResponseEntity xoaBaiViet(int id) {
 			return ResponseEntity.ok(taiKhoanService.xoaTaiKhoan(id));
 		}
-		
+
 		@SuppressWarnings("rawtypes")
 		@GetMapping(value = "/searchbyname")
 		public ResponseEntity timTheoTen(String name) {

@@ -15,6 +15,7 @@ import com.cuoikhoa.demo.service.BaiVietService;
 @RestController
 @RequestMapping(value = "/baiviet")
 public class BaiVietController {
+
 	@Autowired
 	BaiVietService baiVietService;
 	
@@ -23,19 +24,19 @@ public class BaiVietController {
 	public ResponseEntity hienThiDanhSach() {
 		return ResponseEntity.ok(baiVietService.hienThiDanhSach());
 	}
-	
+
 	@SuppressWarnings("rawtypes")
 	@PostMapping(value = "/them")
 	public ResponseEntity themBaiViet(BaiViet baiViet) {
 		return ResponseEntity.ok(baiVietService.themBaiViet(baiViet));
 	}
-	
+
 	@SuppressWarnings("rawtypes")
 	@PutMapping(value = "/sua")
 	public ResponseEntity suaBaiViet(BaiViet baiViet) {
 		return ResponseEntity.ok(baiVietService.suaBaiViet(baiViet));
 	}
-	
+
 	@SuppressWarnings("rawtypes")
 	@DeleteMapping(value = "/xoa")
 	public ResponseEntity xoaBaiViet(int id) {

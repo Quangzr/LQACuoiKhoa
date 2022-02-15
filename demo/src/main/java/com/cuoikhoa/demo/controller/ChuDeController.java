@@ -14,8 +14,8 @@ import com.cuoikhoa.demo.service.ChuDeService;
 
 @RestController
 @RequestMapping(value = "/chude")
-public class ChuDeController {	
-		//Autowired Service
+
+public class ChuDeController {
 		@Autowired
 		ChuDeService chuDeService;
 		
@@ -24,19 +24,19 @@ public class ChuDeController {
 		public ResponseEntity hienThiDanhSach() {
 			return ResponseEntity.ok(chuDeService.hienThiDanhSach());
 		}
-		
+
 		@SuppressWarnings("rawtypes")
 		@PostMapping(value = "/them")
 		public ResponseEntity themBaiViet(ChuDe chuDe) {
 			return ResponseEntity.ok(chuDeService.themChuDe(chuDe));
 		}
-		
+
 		@SuppressWarnings("rawtypes")
 		@PutMapping(value = "/sua")
 		public ResponseEntity suaBaiViet(ChuDe chuDe) {
 			return ResponseEntity.ok(chuDeService.suaChuDe(chuDe));
 		}
-		
+
 		@SuppressWarnings("rawtypes")
 		@DeleteMapping(value = "/xoa")
 		public ResponseEntity xoaBaiViet(int id) {

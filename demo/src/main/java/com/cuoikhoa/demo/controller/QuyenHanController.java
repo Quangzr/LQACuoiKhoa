@@ -15,7 +15,6 @@ import com.cuoikhoa.demo.service.QuyenHanService;
 @RestController
 @RequestMapping(value = "/quyenhan")
 public class QuyenHanController {
-		//Autowired Service
 		@Autowired
 		QuyenHanService quyenHanService;
 		
@@ -24,19 +23,19 @@ public class QuyenHanController {
 		public ResponseEntity hienThiDanhSach() {
 			return ResponseEntity.ok(quyenHanService.hienThiDanhSach());
 		}
-		
+
 		@SuppressWarnings("rawtypes")
 		@PostMapping(value = "/them")
 		public ResponseEntity themBaiViet(QuyenHan quyenHan) {
 			return ResponseEntity.ok(quyenHanService.themQuyenHan(quyenHan));
 		}
-		
+
 		@SuppressWarnings("rawtypes")
 		@PutMapping(value = "/sua")
 		public ResponseEntity suaBaiViet(QuyenHan quyenHan) {
 			return ResponseEntity.ok(quyenHanService.suaQuyenHan(quyenHan));
 		}
-		
+
 		@SuppressWarnings("rawtypes")
 		@DeleteMapping(value = "/xoa")
 		public ResponseEntity xoaBaiViet(int id) {
