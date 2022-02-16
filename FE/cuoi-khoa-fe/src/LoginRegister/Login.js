@@ -14,19 +14,20 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import { Routes, Route, useNavigate } from 'react-router-dom';
+import Divider from '@mui/material/Divider';
 
-function Copyright(props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+// function Copyright(props) {
+//   return (
+//     <Typography variant="body2" color="text.secondary" align="center" {...props}>
+//       {'Copyright © '}
+//       <Link color="inherit" href="https://mui.com/">
+//         Your Website
+//       </Link>{' '}
+//       {new Date().getFullYear()}
+//       {'.'}
+//     </Typography>
+//   );
+// }
 
 const theme = createTheme();
 
@@ -54,19 +55,25 @@ export default function SignIn() {
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 8,
+            marginTop: 10,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          <Typography component="h1" variant="h5" >
+            ĐĂNG NHẬP
+          </Typography> 
+          <Divider style={{width: 396}}/>
+          
+          {/* <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
             <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
+          </Avatar> */}
+          {/* <Typography component="h1" variant="h5">
             Sign in
-          </Typography>
+          </Typography> */}
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+            Tên Đăng Nhập:
             <TextField
               margin="normal"
               required
@@ -77,6 +84,7 @@ export default function SignIn() {
               autoComplete="email"
               autoFocus
             />
+            Mật Khẩu: 
             <TextField
               margin="normal"
               required
@@ -87,10 +95,10 @@ export default function SignIn() {
               id="password"
               autoComplete="current-password"
             />
-            <FormControlLabel
+            {/* <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
-            />
+            /> */}
             <Button
               type="submit"
               fullWidth
@@ -98,15 +106,15 @@ export default function SignIn() {
               sx={{ mt: 3, mb: 2 }}
               onClick={routeChange} // Chuyển sang trang quản lý khóa học khi bấm sign in
             >
-              Sign In
+              ĐĂNG NHẬP
             </Button>
 
             <Grid container>
-              <Grid item xs>
+              {/* <Grid item xs>
                 <Link href="#" variant="body2">
                   Forgot password?
                 </Link>
-              </Grid>
+              </Grid> */}
               <Grid item>
                 <Link href="/Register" variant="body2">
                   {"Don't have an account? Sign Up"}
@@ -115,7 +123,7 @@ export default function SignIn() {
             </Grid>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 8, mb: 4 }} />
+   
       </Container>
     </ThemeProvider>
   );

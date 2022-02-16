@@ -3,13 +3,14 @@ import { Routes, Route, Link } from 'react-router-dom';
 import SignIn from './LoginRegister/Login';
 import SignUp from './LoginRegister/Register';
 import Sidebar from './SideBar/SideBar'
+import Header from './Header/Header'
 
 function App() {
 
 
   return (
     <div className="App">
-
+        <Header />
         <Routes>
             <Route path="/" element={ <SignIn /> }></Route> 
             <Route path="/Register" element={ <SignUp /> }></Route> 

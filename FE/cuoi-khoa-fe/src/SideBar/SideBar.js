@@ -13,20 +13,113 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 
-const drawerWidth = 240;
+
+// list
+import ListSubheader from '@mui/material/ListSubheader';
+import ListItemButton from '@mui/material/ListItemButton';
+import Collapse from '@mui/material/Collapse';
+import DraftsIcon from '@mui/icons-material/Drafts';
+import SendIcon from '@mui/icons-material/Send';
+import ExpandLess from '@mui/icons-material/ExpandLess';
+import ExpandMore from '@mui/icons-material/ExpandMore';
+//end list
 
 export default function ClippedDrawer() {
+
+    // List
+    const [open, setOpen] = React.useState(true);
+
+    const handleClick = () => {
+      setOpen(!open);
+    };
+    // end list
+
+
+
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
         <Toolbar>
           <Typography variant="h6" noWrap component="div">
-            Clipped drawer
+            Lotus Academy
           </Typography>
         </Toolbar>
       </AppBar>
-      <Drawer
+      <Toolbar />
+
+      <List
+      sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper'}}
+      component="nav"
+      aria-labelledby="nested-list-subheader"
+    //   subheader={
+    //     <ListSubheader component="div" id="nested-list-subheader">
+    //       Nested List Items
+    //     </ListSubheader>
+    //   }
+    >
+      <ListItemButton>
+        <ListItemIcon>
+          <SendIcon />
+        </ListItemIcon>
+        <ListItemText primary="Quản lý tài khoản" />
+      </ListItemButton>
+      <Divider />
+      <ListItemButton>
+        <ListItemIcon>
+          <SendIcon />
+        </ListItemIcon>
+        <ListItemText primary="Quản lý học viên" />
+      </ListItemButton>
+      <Divider />
+      <ListItemButton>
+        <ListItemIcon>
+          <SendIcon />
+        </ListItemIcon>
+        <ListItemText primary="Quản lý khóa học" />
+      </ListItemButton>
+      <Divider />
+      <ListItemButton>
+        <ListItemIcon>
+          <DraftsIcon />
+        </ListItemIcon>
+        <ListItemText primary="Quản lý bài viết" />
+      </ListItemButton>
+      <Divider />
+      <ListItemButton onClick={handleClick}>
+        <ListItemIcon>
+          <InboxIcon />
+        </ListItemIcon>
+        <ListItemText primary="Inbox" />
+        {open ? <ExpandLess /> : <ExpandMore />}
+      </ListItemButton>
+      <Divider />
+      <Collapse in={open} timeout="auto" unmountOnExit>
+        <List component="div" disablePadding>
+          <ListItemButton sx={{ pl: 9 }}>
+            <ListItemText primary="Quyền hạn" />
+          </ListItemButton>
+          <Divider />
+          <ListItemButton sx={{ pl: 9 }}>
+            <ListItemText primary="Loại bài viết" />
+          </ListItemButton>
+          <Divider />
+          <ListItemButton sx={{ pl: 9 }}>
+            <ListItemText primary="Chủ đề" />
+          </ListItemButton>
+          <Divider />
+          <ListItemButton sx={{ pl: 9 }}>
+            <ListItemText primary="Loại khóa học" />
+          </ListItemButton>
+          <Divider />
+          <ListItemButton sx={{ pl: 9 }}>
+            <ListItemText primary="Tình trạng học" />
+          </ListItemButton>
+          <Divider />
+        </List>
+      </Collapse>
+    </List>
+      {/* <Drawer
         variant="permanent"
         sx={{
           width: drawerWidth,
@@ -37,29 +130,35 @@ export default function ClippedDrawer() {
         <Toolbar />
         <Box sx={{ overflow: 'auto' }}>
           <List>
-            {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+            {['Quản lý tài khoản', 'Quản lý học viên', 'Quản lý khóa học', 'Quản lý bài viết'].map((text, index) => (
+            <>
               <ListItem button key={text}>
                 <ListItemIcon>
                   {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
                 </ListItemIcon>
                 <ListItemText primary={text} />
               </ListItem>
+              <Divider />
+            </>
             ))}
           </List>
           <Divider />
           <List>
             {['All mail', 'Trash', 'Spam'].map((text, index) => (
+            <>    
               <ListItem button key={text}>
                 <ListItemIcon>
                   {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
                 </ListItemIcon>
                 <ListItemText primary={text} />
               </ListItem>
+              <Divider />
+            </>
             ))}
           </List>
         </Box>
-      </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+      </Drawer> */}
+      {/* <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <Toolbar />
         <Typography paragraph>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -88,7 +187,7 @@ export default function ClippedDrawer() {
           eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
           posuere sollicitudin aliquam ultrices sagittis orci a.
         </Typography>
-      </Box>
+      </Box> */}
     </Box>
   );
 }
