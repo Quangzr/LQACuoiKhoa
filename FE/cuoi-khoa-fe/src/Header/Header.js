@@ -16,7 +16,6 @@ export default function ClippedDrawer() {
           </Typography>
         </Toolbar>
       </AppBar>
-      <Toolbar />
     </Box>
   );
 }

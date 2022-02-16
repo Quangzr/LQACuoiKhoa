@@ -46,8 +46,7 @@ export default function ClippedDrawer() {
           </Typography>
         </Toolbar>
       </AppBar>
-      <Toolbar />
-
+      
       <List
       sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper'}}
       component="nav"
@@ -119,6 +118,7 @@ export default function ClippedDrawer() {
         </List>
       </Collapse>
     </List>
+     
       {/* <Drawer
         variant="permanent"
         sx={{
