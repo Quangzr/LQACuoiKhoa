@@ -13,7 +13,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 
 function Copyright(props) {
   return (
@@ -40,6 +40,13 @@ export default function SignIn() {
       password: data.get('password'),
     });
   };
+
+  // Chuyển sang trang quản lý khóa học khi bấm sign in
+  let navigate = useNavigate(); 
+  const routeChange = () =>{ 
+    let path = `/QuanLyKhoaHoc`; 
+    navigate(path);
+  }
 
   return (
     <ThemeProvider theme={theme}>
@@ -89,9 +96,11 @@ export default function SignIn() {
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
+              onClick={routeChange} // Chuyển sang trang quản lý khóa học khi bấm sign in
             >
               Sign In
             </Button>
+
             <Grid container>
               <Grid item xs>
                 <Link href="#" variant="body2">
