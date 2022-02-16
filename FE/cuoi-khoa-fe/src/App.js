@@ -6,8 +6,6 @@ import Sidebar from './SideBar/SideBar'
 import Header from './Header/Header'
 
 function App() {
-
-
   return (
     <div className="App">
         <Header />
