@@ -33,7 +33,7 @@ export default function ClippedDrawer() {
     // End Side Bar
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex', height: '100vh'}}>
       <CssBaseline />
       <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
         <Toolbar>
@@ -44,7 +44,7 @@ export default function ClippedDrawer() {
       </AppBar>
       
       <List
-      sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper'}}
+      sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper', marginTop: '60px'}}
       component="nav"
       aria-labelledby="nested-list-subheader"
     //   subheader={
